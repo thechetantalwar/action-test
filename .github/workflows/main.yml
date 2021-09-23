@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Send a Notification
         id: notify
-        uses: actions/action-test@v1
+        uses: thechetantalwar/action-test@v1
         with:
           webhook_url: ${{ secrets.SLACK_WEBHOOK }}
           message: "Github Action Got Completed $GITHUB_RUN_NUMBER"

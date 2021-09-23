@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Send a Notification
         id: notify
-        uses: thechetantalwar/action-test@v8
+        uses: thechetantalwar/action-test@v9
         with:
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK }}
           message: "Github Action Got Completed"

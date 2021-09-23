@@ -1,2 +1,4 @@
 #!/bin/bash
-curl -X POST -H 'Content-type: application/json' --data '{"text":"'${2}'"}' $1
+text="{""text"":""'${2}'""}"
+echo $text
+curl -X POST -H 'Content-type: application/json' --data $text $1

@@ -10,4 +10,4 @@ jobs:
         uses: thechetantalwar/action-test@v3
         with:
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK }}
-          message: "Github Action Got Completed '${GITHUB_RUN_NUMBER}''"
+          message: "Github Action Got Completed '${GITHUB_RUN_NUMBER}'"

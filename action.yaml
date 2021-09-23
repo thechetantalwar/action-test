@@ -1,0 +1,15 @@
+name: 'ActionTesting'
+description: 'Testing'
+inputs:
+    slack_webhook_url:
+        description: SLACK APP WEBHOOK URL
+        required: true
+    message:
+        description: Message to be sent to slack
+        required: true
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.slack_webhook_url }}
+        - ${{ inputs.message }}

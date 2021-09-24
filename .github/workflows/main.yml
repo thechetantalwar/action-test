@@ -6,7 +6,7 @@ jobs:
     name: Testing Message
     steps:
       - name: Test
-        run: export text="Github Actions Completed $'{GITHUB_RUN_NUMBER}'"
+        run: export text="Github Actions Completed $'{GITHUB_RUN_NUMBER}'" && echo $test
       - name: Send a Notification
         id: notify
         uses: thechetantalwar/action-test@v12

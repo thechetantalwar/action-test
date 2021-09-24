@@ -5,11 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Testing Message
     steps:
-      - name: Test
-        run: export text="Github Actions Completed $'{GITHUB_RUN_NUMBER}'" && echo $test
       - name: Send a Notification
         id: notify
         uses: thechetantalwar/action-test@v12
         with:
           slack_webhook_url: ${{ secrets.TEAM_HOOK }}
-          message: ${{ env.text }}
+          message: $GITHUB_RUN_NUMBER

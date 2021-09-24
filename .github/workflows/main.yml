@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Send a Notification
         id: notify
-        uses: thechetantalwar/action-test@v12
+        uses: thechetantalwar/action-test@v13
         with:
           slack_webhook_url: ${{ secrets.TEAM_HOOK }}
           message: $GITHUB_RUN_NUMBER

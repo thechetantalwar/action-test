@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Testing Message
     steps:
+      - name: List of the GitHub Actions environment variables on Ubuntu
+        run: env
       - name: Send a Notification
         id: notify
         uses: thechetantalwar/action-test@v13

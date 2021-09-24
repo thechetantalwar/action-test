@@ -12,4 +12,4 @@ jobs:
           text: "Github Action Got Completed '${GITHUB_RUN_NUMBER}' ."
         with:
           slack_webhook_url: ${{ secrets.TEAM_HOOK }}
-          message: '$text'
+          message: "${text}"

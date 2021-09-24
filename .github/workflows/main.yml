@@ -9,7 +9,7 @@ jobs:
         run: env
       - name: Send a Notification
         id: notify
-        uses: thechetantalwar/action-test@v13
+        uses: thechetantalwar/action-test@v14
         with:
           slack_webhook_url: ${{ secrets.TEAM_HOOK }}
           message: "Github Action Completed with Build Number ${{ github.run_number }}"

@@ -8,8 +8,6 @@ jobs:
       - name: Send a Notification
         id: notify
         uses: thechetantalwar/action-test@v12
-        env:
-          text: "Github Action Got Completed '${GITHUB_RUN_NUMBER}' ."
         with:
           slack_webhook_url: ${{ secrets.TEAM_HOOK }}
-          message: "${text}"
+          message: "Github Actions Completed ${{ GITHUB_RUN_NUMBER }}"

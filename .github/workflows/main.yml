@@ -12,6 +12,6 @@ jobs:
         uses: thechetantalwar/action-test@v13
         with:
           slack_webhook_url: ${{ secrets.TEAM_HOOK }}
-          message: $GITHUB_RUN_NUMBER
+          message: ${{ github.run_number }}
 
 

@@ -1,18 +1,20 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  build:
     runs-on: ubuntu-latest
-    name: Testing Message
+    name: Testing Job
     steps:
       - name: List of the GitHub Actions environment variables on Ubuntu
-        id: step_onr
-        run: env
+        run: echo "Test"
+  notify:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: build
+    steps:
       - name: Send a Notification
         id: notify
         uses: thechetantalwar/action-test@v14
         with:
           slack_webhook_url: ${{ secrets.TEAM_HOOK }}
-          message: "Github Action Completed with Build Number ${{ github.run_number }} ----  ${{ steps.step_onr.outcome }} ------ ${{ job.status }}"
-
-
+          message: "Github Action Completed for ${{ github.repository	 }} with Build Number ${{ github.run_number }} and the outcome is  ${{ needs.build.result }}."
